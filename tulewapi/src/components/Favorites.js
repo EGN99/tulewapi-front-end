@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 const Favorites=()=>{
 
 const fetchData = () => {
-    fetch('http://localhost:8001/restaurant')
+    fetch('http://localhost:9292/favorites')
       .then((response) => response.json())
       .then((data) => {
         const favoriteRestaurants = data.filter((restaurant) => restaurant.isFavorite === true);
@@ -17,7 +17,7 @@ const fetchData = () => {
     },[])
 
 function toggleFavorite(id) {
-  fetch(`http://localhost:8001/restaurant/${id}`, {
+  fetch(`http://localhost:9292/favorites/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'

@@ -67,6 +67,20 @@ function Home (){
         }
         };
 
+  //   const handleVisitClick = () => {
+
+  //   fetch(`http://localhost:9292/restaurants/restaurants/$id}`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       // Handle the restaurant data returned from the backend API
+  //       console.log(data);
+  //     })
+  //     .catch(error => {
+  //       // Handle any errors that occurred during the fetch request
+  //       console.error(error);
+  //     });
+  // }
+
     return (
       
       <div>

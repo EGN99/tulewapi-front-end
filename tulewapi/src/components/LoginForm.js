@@ -17,7 +17,7 @@ function LoginForm() {
     }
 
     function fetchUsers(){
-    fetch (" http://localhost:8001/user") 
+    fetch (" http://localhost:9292/users") 
     .then((resp) =>resp.json())
     .then((data)=>{
 
@@ -35,7 +35,7 @@ function LoginForm() {
 
   function signUp() {
 
-    fetch("http://localhost:8001/user")
+    fetch("http://localhost:9292/user")
       .then((resp) => resp.json())
       .then((data) => {
         const userExists = data.find((user) => user.name === username || user.email === email);

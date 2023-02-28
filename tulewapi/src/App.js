@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Title from './components/Title';
@@ -13,45 +14,29 @@ import Footer from './components/Footer';
 
 function App() {
 
+  const appName="TuleWapi Restaurant Advisor"
 
-  
-const appName="TuleWapi Restaurant Advisor"
- useEffect(()=>{
-  document.title = appName
- },[appName])
+  useEffect(()=>{
+    document.title = appName
+  },[appName])
 
- let component
- switch (window.location.pathname){
-  case "/":
-    component =<Home/>
-    break
-  case "/Favorites":
-    component=<Favorites/>
-    break
-  case "/Review":
-    component=<Review/>
-    break
-  case "/LoginForm":
-    component=<LoginForm/>
-    break
-  case "/Cuisines":
-    component=<Cuisines/>
-    break
-  case "/MyRestaurant":
-    component=<MyRestaurant/>
-    break
-
- }
-  
   return (
-    <div className="App">
-      <Title/>
-      <Navbar/>
-      {component}
-      <Footer/>
-    </div>
+    <Router>
+      <div className="App">
+        <Title />
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/Favorites" element={<Favorites/>} />
+          <Route path="/Review" element={<Review/>} />
+          <Route path="/LoginForm" element={<LoginForm/>} />
+          <Route path="/Cuisines" element={<Cuisines/>} />
+          <Route path="/MyRestaurant/:id" element={<MyRestaurant/>} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
-
   }
 
 export default App;

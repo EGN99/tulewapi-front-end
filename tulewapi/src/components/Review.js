@@ -6,7 +6,7 @@ const Review=()=>{
     const [myReviews,setmyReviews]=useState([])
 
     useEffect(() => {
-        fetch('http://localhost:8001/myReviews')
+        fetch('http://localhost:9292/app_reviews')
         .then((res) => res.json())
         .then((data) => {
             setmyReviews(data);
@@ -16,7 +16,7 @@ const Review=()=>{
     const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:8001/myReviews', {
+    fetch('http://localhost:9292/app_reviews', {
       method: 'POST',
       body: JSON.stringify({ myReview }),
       headers: { 'Content-Type': 'application/json' },
@@ -30,9 +30,12 @@ const Review=()=>{
   };
 
         const handleDelete = (reviewId) => {
-            fetch(`http://localhost:8001/myReviews/${reviewId}`, {
+            fetch(`http://localhost:9292/app_reviews/${reviewId}`, {
             method: 'DELETE',
             })
+            // fetch(`http://localhost:9292/app_reviews/${reviewId}?userId=${user.id}`, {
+            //     method: 'DELETE',
+            //     })
             .then(() => {
                 const updatedReviews = myReviews.filter(review => review.id !== reviewId)
                 setmyReviews(updatedReviews);
@@ -79,14 +82,14 @@ const Review=()=>{
             <ul style={{listStyleType:'none', marginLeft:'370px',}}className="reviewList">
                 {myReviews.map((review) => (
 
-                <li style={{textColor:'black',
+                <li key={review.id} style={{textColor:'black',
             border:'1px solid #ccc',
             backgroundColor: '#f2f2f2',
             padding: '15px',
             fontSize:'14px',
             margin: '5px 5px',
-                }}
-                key={review.id}>{review.myReview}<button onClick={() => handleDelete(review.id)} style={{float:'right',padding:'2px', paddingLeft:'5px',paddingRight:'5px',}} className="deletBtn btn btn-danger"><i style={{fontSize:"15px",}} className="fa fa-trash"></i></button></li>
+                }}>
+                    {review.user.username}: {review.comment}<button onClick={() => handleDelete(review.id)} style={{float:'right',padding:'2px', paddingLeft:'5px',paddingRight:'5px',}} className="deletBtn btn btn-danger"><i style={{fontSize:"15px",}} className="fa fa-trash"></i></button></li>
                 ))}
             </ul>
 

@@ -9,12 +9,10 @@ const MyRestaurant=()=>{
 
     const getRestaurant=()=>{
 
-        fetch(`http://localhost:8001/restaurant`)
+        fetch(`http://localhost:9292/MyRestaurant/${id}`)
             .then(response => response.json())
             .then(data => {
-            const myRestaurant = data.find(restaurant => restaurant.id === id);
-            setRestaurant(myRestaurant);
-            console.log(data);
+                setRestaurant(data);
         }
         );
     }
@@ -30,7 +28,14 @@ const MyRestaurant=()=>{
         {restaurant ? (
             <div>
                 <h2>{restaurant.name}</h2>
-                <p>{restaurant.description}</p>
+                <p>{restaurant.address}</p>
+                <ul>
+                    {restaurant.reviews.map((review) => (
+                    <li key={review.id}>
+                        {review.user.username}: {review.comment}
+                    </li>
+            ))}
+          </ul>
                 {/* display other details */}
             </div>
             ) : (
