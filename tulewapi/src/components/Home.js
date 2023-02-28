@@ -9,7 +9,7 @@ function Home (){
 
   useEffect(() => {
   const fetchData = async () => {
-    const res = await fetch('http://localhost:8001/restaurant');
+    const res = await fetch('http://localhost:9292/restaurants');
     const data = await res.json();
     const updatedFavorites = data.filter(item => item.isFavorite).map(item => item.id);
     setFavorites(updatedFavorites);
@@ -19,7 +19,7 @@ function Home (){
 
 
   const handleSearch=(searchTerm)=> {
-      fetch('http://localhost:8001/restaurant')
+      fetch('http://localhost:9292/restaurants')
       .then((response) => response.json())
       .then((data) => {
         const results=data.filter((restaurant)=>restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -37,7 +37,7 @@ function Home (){
         if (isFavorite(id)) {
 
           setFavorites(favorites.filter((favoriteId) => favoriteId !== id));
-          const response = await fetch(`http://localhost:8001/restaurant/${id}`, {
+          const response = await fetch(`http://localhost:9292/restaurants/${id}`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ function Home (){
         } else {
 
           setFavorites([...favorites, id]);
-          const response = await fetch(`http://localhost:8001/restaurant/${id}`, {
+          const response = await fetch(`http://localhost:9292/restaurants/${id}`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json'
