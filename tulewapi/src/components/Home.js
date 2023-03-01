@@ -111,7 +111,7 @@ function Home (){
               className="col-md-2" id="restaurant-card"
               key={restaurant.id}         
             >
-              <img style={{height:'auto', width:'100%',}} src={restaurant.image} alt={restaurant.name} />
+              <img style={{height:'auto', width:'100%',}} src={restaurant.image_url} alt={restaurant.name} />
               <h2 style={{fontSize:'18px', paddingTop:"10px",}}>{restaurant.name}</h2>
               <p style={{fontSize:'12px', paddingTop:"10px",}} className="card-text">{restaurant.description}</p>
               <div style={{alignItems:'inline',}}>

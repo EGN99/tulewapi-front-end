@@ -17,7 +17,7 @@ function LoginForm() {
     }
 
     function fetchUsers(){
-    fetch (" http://localhost:9292/users") 
+    fetch ("http://localhost:9292/users") 
     .then((resp) =>resp.json())
     .then((data)=>{
 
@@ -35,15 +35,15 @@ function LoginForm() {
 
   function signUp() {
 
-    fetch("http://localhost:9292/user")
+    fetch("http://localhost:9292/users")
       .then((resp) => resp.json())
       .then((data) => {
+        console.log(data)
         const userExists = data.find((user) => user.name === username || user.email === email);
-
         if (userExists) {
           alert("Username or email already exists");
           } else {
-            fetch("http://localhost:8001/user", {
+            fetch("http://localhost:9292/users", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
