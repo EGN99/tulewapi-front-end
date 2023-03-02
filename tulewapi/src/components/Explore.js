@@ -13,8 +13,8 @@ function Explore(){
       })})
 
     const addToFavorites = (id) => {
-        // if (isFavorite(id)) {
-        //   setFavorites(favorites.filter((favoriteId) => favoriteId !== id));
+        if (isFavorite(id)) {
+          setFavorites(favorites.filter((favoriteId) => favoriteId !== id));
         //    fetch(`http://localhost:9292/favorites/${id}`, {
         //     method: 'DELETE',
         //     headers: {
@@ -30,23 +30,22 @@ function Explore(){
         //       console.log(data)
         //       alert('removed from favorites')
         //   });
-        // } else {
+        } else {
 
-        //   setFavorites([...favorites, id]);
-        //   fetch(`http://localhost:9292/favorites/${id}`, {
+          setFavorites([...favorites, id]);
+        //   fetch(`http://localhost:9292/favorites`, {
         //     method: 'POST',
         //     headers: {
         //       'Content-Type': 'application/json'
         //     },
         //     body: JSON.stringify({ }),
         //   })
-        //       // handle the response as needed
         //       .then(response => response.json())
         //       .then(data => {
         //       console.log(data)
         //       alert('Added to favorites!')
         //   });
-        // }
+        }
         };
 
     return (
