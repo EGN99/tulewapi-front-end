@@ -81,7 +81,6 @@ const Review=()=>{
 
             <ul style={{listStyleType:'none', marginLeft:'370px',}}className="reviewList">
                 {myReviews.map((review) => (
-
                 <li key={review.id} style={{textColor:'black',
             border:'1px solid #ccc',
             backgroundColor: '#f2f2f2',
@@ -90,12 +89,11 @@ const Review=()=>{
             margin: '5px 5px',
                 }}>
                     <h5>{review.user.username}</h5> 
-                    <p>{review.comment}</p>
-                    <button onClick={() => handleDelete(review.id)} style={{float:'right',padding:'2px', paddingLeft:'5px',paddingRight:'5px',}} className="deletBtn btn btn-danger"><i style={{fontSize:"15px",}} className="fa fa-trash"></i></button></li>
+                    <p>{review.comment}<button onClick={() => handleDelete(review.id)} style={{float:'right',padding:'2px', paddingLeft:'5px',paddingRight:'5px',}} className="deletBtn btn btn-danger"><i style={{fontSize:"15px",}} className="fa fa-trash"></i></button></p>
+                </li>
+
                 ))}
             </ul>
-
-
              </div>
         </div>
            
