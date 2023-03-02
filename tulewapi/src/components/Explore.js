@@ -12,38 +12,41 @@ function Explore(){
         setRestaurants(data);
       })})
 
-    const addToFavorites = async (id) => {
-        if (isFavorite(id)) {
+    const addToFavorites = (id) => {
+        // if (isFavorite(id)) {
+        //   setFavorites(favorites.filter((favoriteId) => favoriteId !== id));
+        //    fetch(`http://localhost:9292/favorites/${id}`, {
+        //     method: 'DELETE',
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
 
-          setFavorites(favorites.filter((favoriteId) => favoriteId !== id));
-          const response = await fetch(`http://localhost:9292/restaurants/${id}`, {
-            method: 'PATCH',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ isFavorite: false }),
-          })
-              // handle the response as needed
-              .then(response => response.json())
-              .then(data => {
-              console.log(data)
-          });
-        } else {
+        //     }),
+        //   })
+        //       // handle the response as needed
+        //       .then(response => response.json())
+        //       .then(data => {
+        //       console.log(data)
+        //       alert('removed from favorites')
+        //   });
+        // } else {
 
-          setFavorites([...favorites, id]);
-          const response = await fetch(`http://localhost:9292/restaurants/${id}`, {
-            method: 'PATCH',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ isFavorite: true }),
-          })
-              // handle the response as needed
-              .then(response => response.json())
-              .then(data => {
-              console.log(data)
-          });
-        }
+        //   setFavorites([...favorites, id]);
+        //   fetch(`http://localhost:9292/favorites/${id}`, {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({ }),
+        //   })
+        //       // handle the response as needed
+        //       .then(response => response.json())
+        //       .then(data => {
+        //       console.log(data)
+        //       alert('Added to favorites!')
+        //   });
+        // }
         };
 
     return (
