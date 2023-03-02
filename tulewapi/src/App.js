@@ -9,7 +9,7 @@ import Favorites from './components/Favorites';
 import Review from './components/Review';
 import LoginForm from './components/LoginForm';
 import MyRestaurant from './components/MyRestaurant';
-import Cuisines from './components/Cuisines';
+import Explore from './components/Explore';
 import Footer from './components/Footer';
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
           <Route path="/Favorites" element={<Favorites/>} />
           <Route path="/Review" element={<Review/>} />
           <Route path="/LoginForm" element={<LoginForm/>} />
-          <Route path="/Cuisines" element={<Cuisines/>} />
+          <Route path="/Explore" element={<Explore/>} />
           <Route path="/MyRestaurant/:id" element={<MyRestaurant/>} />
         </Routes>
         <Footer />

@@ -25,16 +25,16 @@ const Navbar=()=>{
     }}
     className="navbar-nav me-auto mb-2 mb-lg-0">
     <li className="nav-item">
-        <a className="nav-link active" href="/#">Home</a>
+        <a className="nav-link active" href="/#"><i class="fa fa-home" aria-hidden="true"></i></a>
     </li>
-    {/* <li className="nav-item">
-        <a className="nav-link active" href="/Cuisines">Cuisines</a>
-        </li> */}
+        <li className="nav-item">
+          <a className="nav-link active" href="/Explore">Explore <i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+        </li>
         <li className="nav-item">
         <a className="nav-link active" href="/Favorites">My Favorites <i className="fa fa-heart" aria-hidden="true"></i></a>
         </li>
         <li className="nav-item">
-        <a className="nav-link active" href="/Review">Reviews <i className="fa fa-comment" aria-hidden="true"></i></a>
+        <a className="nav-link active" href="/Review">Reviews <i class="fa fa-comments" aria-hidden="true"></i></a>
         </li>
     </ul>
         <div >
