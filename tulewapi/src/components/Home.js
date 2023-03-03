@@ -85,10 +85,10 @@ function Home (){
       
       <div>
 
-        <div style={{backgroundImage: `url("https://www.businesslist.co.ke/img/cats/restaurants.jpg")`, height:"450px",}}>
+        <div style={{backgroundImage: `url("https://www.businesslist.co.ke/img/cats/restaurants.jpg")`, height:"721px",}}>
           <div  className="searchArea" >
         <form onSubmit={handleSubmit} style={{
-          marginTop:'240px',
+          marginTop:'300px',
         }} className="d-flex" role="search">
         <input style={{
           padding:'10px',
@@ -125,7 +125,7 @@ function Home (){
           </div>
 
        <span>
-      <div style={{minHeight:'100px'}}></div>
+      {/* <div style={{minHeight:'90px'}}></div> */}
        </span>
        </div>
 

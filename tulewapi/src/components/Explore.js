@@ -75,6 +75,7 @@ function Explore(){
               </div>
             ))}
           </div>
+          <div style={{minHeight:'100px'}}></div>
         </div>
         </div>
         </>
