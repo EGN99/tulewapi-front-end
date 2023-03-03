@@ -125,16 +125,7 @@ function Home (){
           </div>
 
        <span>
-         <div style={{marginLeft:'30px',marginTop:'50px', textAlign:'center'}}>
-            {/* <p>What cuisine do you want to experience ?</p> */}
-              <div >
-                  <button style={{margin:'5px',}} id="BBQ" type="button" className="btn btn-outline-warning"  >BBQ Restaurants</button>
-                  <button style={{margin:'5px',}} id="chinese" type="button" className="btn btn-outline-warning"  >Chinese Restaurants</button>
-                  <button style={{margin:'5px',}} id="drinks" type="button" className="btn btn-outline-warning" >Cocktail Bars</button>
-                  <button style={{margin:'5px',}} id="fastFood" type="button" className="btn btn-outline-warning"   >Pizza Places</button>
-                  <button style={{margin:'5px',}} id="soup" type="button" className="btn btn-outline-warning"  >Soup Bars</button>
-                 </div>
-        </div>
+      <div style={{minHeight:'100px'}}></div>
        </span>
        </div>
 
