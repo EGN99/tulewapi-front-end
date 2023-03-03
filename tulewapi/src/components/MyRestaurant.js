@@ -89,6 +89,7 @@ const MyRestaurant=()=>{
                             </li>
                             ))}
                         </ul>
+                        <div style={{minHeight:'100px'}}></div>
                 </div>
                 {/* display other details */}
             </div>

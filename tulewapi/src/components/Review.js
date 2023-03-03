@@ -94,7 +94,9 @@ const Review=()=>{
 
                 ))}
             </ul>
+            <div style={{minHeight:'100px'}}></div>
              </div>
+             
         </div>
            
     )
