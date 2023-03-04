@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react';
+import SearchBar from './SearchBar';
 
 function SearchResults(){
 
@@ -25,6 +26,7 @@ function SearchResults(){
     return (
         <div>
         <div className="row">
+            {/* <SearchBar handleRouting={true}/> */}
             {searchResults.map((restaurant) => (
             <div
                 className="col-md-2" id="restaurant-card"
@@ -41,6 +43,7 @@ function SearchResults(){
                 </div>
             </div>
             ))}
+        <div style={{minHeight:'100px'}}></div>
         </div>
         </div>
         );
