@@ -11,6 +11,7 @@ import LoginForm from './components/LoginForm';
 import MyRestaurant from './components/MyRestaurant';
 import Explore from './components/Explore';
 import Footer from './components/Footer';
+import SearchResults from './components/SearchResults';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home/>} />
           <Route path="/Favorites" element={<Favorites/>} />
+          <Route path="/SearchResults" element={<SearchResults/>} />
           <Route path="/Review" element={<Review/>} />
           <Route path="/LoginForm" element={<LoginForm/>} />
           <Route path="/Explore" element={<Explore/>} />
