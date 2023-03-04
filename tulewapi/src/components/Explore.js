@@ -1,4 +1,5 @@
 import React, { useEffect, useState} from 'react';
+import SearchBar from './SearchBar';
 
 function Explore(){
 
@@ -51,7 +52,8 @@ function Explore(){
     return (
 
         <>
-        <p style={{textAlign:'center'}}>Away we go...</p>
+        {/* <p style={{textAlign:'center'}}>Away we go...</p> */}
+        <SearchBar/>
         <div className="restaurant-card-container" style={{ width:'90%',}}>
         
         <div className="ui four column grid" ></div>

@@ -51,7 +51,6 @@
 }
 
 .miniBtn {
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -65,7 +64,7 @@
   transition: background-color 0.2s;
 }
 
-.mini-btn:hover {
+.miniBtn:hover {
   background-color: #e6e6e6;
 }
 

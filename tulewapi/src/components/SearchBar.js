@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function SearchBar(){
+function SearchBar({ handleRouting = true }){
 
     const [searchTerm, setSearchTerm] = useState('');
     let navigate = useNavigate();
@@ -9,8 +9,13 @@ function SearchBar(){
      const handleSubmit = (e) => {
           e.preventDefault();
           if (searchTerm.length > 0) {
+
             localStorage.setItem('searchTerm', searchTerm);
-            navigate('/SearchResults');
+            if (handleRouting) {
+                navigate('/SearchResults');
+            }else{
+
+            }
           } else {
             alert('Input something to search');
           }
@@ -18,10 +23,10 @@ function SearchBar(){
 
  return(
     <>
-        <div className="SearchBar">
+        <div className="searchBar">
             <form onSubmit={handleSubmit}>
-                <input className="mini-bar" type="tetx" placeholder="Search" onChange={(e)=>setSearchTerm(e.target.value)}/>
-                <button className="mini-btn"><i className="fa fa-search"></i></button>
+                <input className="miniBar" type="tetx" placeholder="Search" onChange={(e)=>setSearchTerm(e.target.value)}/>
+                <button className="miniBtn"><i className="fa fa-search"></i></button>
             </form>
         </div>
     </>
