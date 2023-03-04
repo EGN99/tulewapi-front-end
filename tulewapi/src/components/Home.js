@@ -5,13 +5,15 @@ function Home (){
   const [searchTerm, setSearchTerm] = useState('');
   let navigate = useNavigate();
 
-
       const handleSubmit = (e) => {
-        e.preventDefault();
-        localStorage.setItem('searchTerm', searchTerm);
-        navigate('/SearchResults')
-        
-      };
+          e.preventDefault();
+          if (searchTerm.length > 0) {
+            localStorage.setItem('searchTerm', searchTerm);
+            navigate('/SearchResults');
+          } else {
+            alert('Input something to search');
+          }
+        };
 
     return (
 
