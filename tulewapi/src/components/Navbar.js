@@ -37,7 +37,13 @@ const Navbar=()=>{
         <a className="nav-link active" href="/Review">Reviews <i className="fa fa-comments" aria-hidden="true"></i></a>
         </li>
     </ul>
-        <div >
+        <div>
+          <a style={{
+          marginRight:'8px',
+          fontSize:'18px',
+        }} className="btn" href="/Admin">
+            <i className="fa fa-cog" aria-hidden="true"></i>
+          </a>
         <button 
         style={{
           marginRight:'20px',

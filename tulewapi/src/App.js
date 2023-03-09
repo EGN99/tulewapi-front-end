@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import Admin from './components/Admin';
 import Title from './components/Title';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -16,7 +17,6 @@ import SearchResults from './components/SearchResults';
 function App() {
 
   const appName="TuleWapi Restaurant Advisor"
-
   useEffect(()=>{
     document.title = appName
   },[appName])
@@ -34,6 +34,7 @@ function App() {
           <Route path="/LoginForm" element={<LoginForm/>} />
           <Route path="/Explore" element={<Explore/>} />
           <Route path="/MyRestaurant/:id" element={<MyRestaurant/>} />
+          <Route path="/Admin" element={<Admin/>} />
         </Routes>
         <Footer />
       </div>
